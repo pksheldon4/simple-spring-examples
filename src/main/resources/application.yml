@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    platform: mysql
+    url: jdbc:mysql://localdocker:3306/examples
+    username: examples
+    password: examples
+    test-on-borrow: true
+    validation-query: "SELECT 1"
+

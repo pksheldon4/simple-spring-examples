@@ -1,0 +1,9 @@
+mysql:
+  environment:
+  - MYSQL_DATABASE=examples
+  - MYSQL_PASSWORD=examples
+  - MYSQL_ROOT_PASSWORD=admin123
+  - MYSQL_USER=examples
+  image: mysql:latest
+  ports:
+  - 3306:3306

@@ -1,0 +1,9 @@
+CREATE TABLE book (
+    ID BIGINT NOT NULL AUTO_INCREMENT,
+    NAME VARCHAR(100) NOT NULL,
+    SHORT_DESCRIPTION VARCHAR(500),
+    PRIMARY KEY (ID)
+);
+
+INSERT INTO book (NAME, SHORT_DESCRIPTION) VALUES ('Catcher in the Rye', 'A book about Holden.');
+INSERT INTO book (NAME, SHORT_DESCRIPTION) VALUES ('The Firm', 'A book about Lawyers.');
