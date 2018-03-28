@@ -28,4 +28,8 @@ nbdist/
 mvnw
 mvnw.cmd
 
+### Macbook ###
 .DS_Store
+
+### JMeter ###
+jmeter*.log
