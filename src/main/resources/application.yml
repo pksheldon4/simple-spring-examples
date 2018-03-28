@@ -6,4 +6,6 @@ spring:
     password: testdb
     test-on-borrow: true
     validation-query: "SELECT 1"
-
+management:
+  security:
+    enabled: false
