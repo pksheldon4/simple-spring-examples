@@ -9,4 +9,8 @@ public interface BookService {
 
     public List<Book> findAll();
 
+    public Book findBook(Long id);
+
+    public List<Book> findBookByNameLike(String nameLikeString);
+
 }

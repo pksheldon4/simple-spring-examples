@@ -18,4 +18,14 @@ public class DefaultBookService implements BookService {
 
         return repository.findAll();
     }
+    public Book findBook(Long id) {
+
+        return repository.findOne(id);
+    }
+
+    public List<Book> findBookByNameLike(String nameLikeString) {
+
+        return repository.findBooksByNameContainingIgnoreCase(nameLikeString);
+    }
+
 }

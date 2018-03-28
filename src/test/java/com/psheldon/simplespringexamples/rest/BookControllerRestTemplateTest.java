@@ -25,7 +25,7 @@ import static org.mockito.BDDMockito.given;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class BookControllerTestRestTemplate {
+public class BookControllerRestTemplateTest {
 
     @LocalServerPort
     private String port;
@@ -39,7 +39,7 @@ public class BookControllerTestRestTemplate {
     @Test
     public void testGetListOfBooks() throws Exception {
 
-        Book catcher = setupBooks();
+        setupBooks();
 
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(getRestUrl("/books"), String.class);
         Assert.notNull(responseEntity, "ResponseEntity should not be null.");

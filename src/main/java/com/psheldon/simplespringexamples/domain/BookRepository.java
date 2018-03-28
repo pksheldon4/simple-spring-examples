@@ -3,8 +3,10 @@ package com.psheldon.simplespringexamples.domain;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface BookRepository extends JpaRepository<Book, String>{
+import java.util.List;
 
-    public Book findBookByNameContainingIgnoreCase(String name);
+@Repository
+public interface BookRepository extends JpaRepository<Book, Long>{
+
+    public List<Book> findBooksByNameContainingIgnoreCase(String name);
 }
