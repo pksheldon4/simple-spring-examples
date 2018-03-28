@@ -1,0 +1,12 @@
+applications:
+- name: simple-spring-examples
+  disk_quota: 1G
+  instances: 1
+  memory: 768M
+  buildpack: java_buildpack
+  routes:
+  - route: simple-spring-examples-ps.cfapps.io
+  stack: cflinuxfs2
+  path: ./target/simple-spring-examples-0.0.1-SNAPSHOT.jar
+  services:
+  - simple-spring-examples-db
