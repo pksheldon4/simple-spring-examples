@@ -1,0 +1,16 @@
+---
+resources: 
+- name: simple-spring-examples
+  type: git
+  source:
+    branch: simple-cf-cli
+    uri: http://github.com/pksheldon4/simple-spring-examples.git
+
+jobs:
+- name: build
+  public: true
+  serial: true
+  plan:
+  - get: simple-spring-examples
+  - task: build
+    file: simple-spring-examples/ci/build.yml
