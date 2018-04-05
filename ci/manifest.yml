@@ -1,8 +1,7 @@
 applications:
-- name: simple-spring-examples-ps
+- name: APPNAME
   disk_quota: 1G
   instances: 1
   memory: 768M
   services:
   - simple-spring-examples-db
-  path: ./target/simple-spring-examples-0.0.1-SNAPSHOT.jar

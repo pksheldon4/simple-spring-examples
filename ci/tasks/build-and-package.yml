@@ -1,0 +1,17 @@
+--- 
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: starkandwayne/concourse-java
+    tag: '8'
+
+inputs:
+- name: simple-spring-examples
+
+outputs:
+- name: target
+
+run:
+  path: simple-spring-examples/ci/tasks/run-build-and-package
