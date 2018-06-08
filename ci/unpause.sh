@@ -1,1 +1,1 @@
-fly -t tutorial unpause-pipeline -p simple-spring-examples
+fly -t concourse-local unpause-pipeline -p simple-spring-examples
