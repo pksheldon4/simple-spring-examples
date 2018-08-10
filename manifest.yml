@@ -5,4 +5,4 @@ applications:
   memory: 768M
   services:
   - simple-spring-examples-db
-  path: ./target/simple-spring-examples-0.0.1-SNAPSHOT.jar
+  path: ./target/simple-spring-examples.jar
