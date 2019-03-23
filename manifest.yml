@@ -1,6 +1,7 @@
 applications:
 - name: simple-spring-examples-ps
   disk_quota: 1G
+  buildpack: java_buildpack_offline
   instances: 1
   memory: 768M
   services:
