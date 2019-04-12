@@ -1,1 +1,1 @@
-fly -t concourse-local destroy-pipeline -p simple-spring-examples
+fly -t tutorial destroy-pipeline -p simple-spring-examples
