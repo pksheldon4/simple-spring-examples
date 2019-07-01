@@ -1,0 +1,11 @@
+applications:
+- name: bo
+  disk_quota: 1G
+  buildpack: java_buildpack_offline
+  instances: 1
+  memory: 768M
+  services:
+  - books-db
+  path: ./target/books-api.jar
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }}'

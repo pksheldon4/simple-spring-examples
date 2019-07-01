@@ -5,15 +5,37 @@ services:
     image: mysql/mysql-server
     environment:
       MYSQL_DATABASE: test
-      MYSQL_ROOT_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_ROOT_HOST: '%'
     ports:
-    - 3306:3306
+    - "3306:3306"
 
-  app:
-    container_name: simple-spring-examples
-    image: simple-spring-examples
+  books-api:
+    container_name: books-api
+    image: pksheldon4/simple-books-api
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
     ports:
       - 8080:8080
     depends_on:
       - mysql
+
+  client-app:
+    container_name: client-app
+    image: pksheldon4/simple-client-app
+    environment:
+      server.port: 8888
+      BOOK_SERVER_URL: http://books-api:8080
+    expose:
+      - "8888"
+
+  nginx:
+    container_name: some-nginx
+    image: nginx:1.13
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - client-app
