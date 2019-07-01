@@ -1,18 +1,19 @@
 version: '3'
 services:
   mysql:
+    container_name: some_mysql
+    image: mysql/mysql-server
     environment:
-    - MYSQL_DATABASE=examples
-    - MYSQL_PASSWORD=examples
-    - MYSQL_ROOT_PASSWORD=admin123
-    - MYSQL_USER=examples
-    image: mysql:latest
+      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_ROOT_HOST: '%'
     ports:
     - 3306:3306
 
-  myapp:
-    image: simple-spring-examples:latest
+  app:
+    container_name: simple-spring-examples
+    image: simple-spring-examples
     ports:
       - 8080:8080
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/examples
+    depends_on:
+      - mysql

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DefaultBookService implements BookService {
@@ -18,9 +19,9 @@ public class DefaultBookService implements BookService {
 
         return repository.findAll();
     }
-    public Book findBook(Long id) {
+    public Optional<Book> findBook(Long id) {
 
-        return repository.findOne(id);
+        return repository.findById(id);
     }
 
     public List<Book> findBookByNameLike(String nameLikeString) {

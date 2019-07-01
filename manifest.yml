@@ -7,3 +7,5 @@ applications:
   services:
   - simple-spring-examples-db
   path: ./target/simple-spring-examples.jar
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }}'
