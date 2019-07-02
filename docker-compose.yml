@@ -1,7 +1,7 @@
 version: '3'
 services:
   mysql:
-    container_name: some_mysql
+    container_name: some-mysql
     image: mysql/mysql-server
     environment:
       MYSQL_DATABASE: test
@@ -9,6 +9,8 @@ services:
       MYSQL_ROOT_HOST: '%'
     ports:
     - "3306:3306"
+    volumes:
+      - my-datavolume:/var/lib/mysql
 
   books-api:
     container_name: books-api
@@ -39,3 +41,6 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - client-app
+
+volumes:
+  my-datavolume:
