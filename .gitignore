@@ -1,3 +1,5 @@
+k8s/*.json
+
 target/
 !.mvn/wrapper/maven-wrapper.jar
 

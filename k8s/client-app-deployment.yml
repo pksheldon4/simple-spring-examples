@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-app
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8888
+  selector:
+    app: client-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: client-app
+  template:
+    metadata:
+      labels:
+        app: client-app
+    spec:
+      containers:
+      - image: pksheldon4/simple-client-app
+        name: client-app
+        env:
+        - name: BOOK_SERVER_URL
+          value: http://books-api:8080
+        - name: server.port
+          value: "8888"
+        ports:
+        - containerPort: 8888
+      restartPolicy: Always
