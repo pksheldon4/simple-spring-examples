@@ -30,13 +30,13 @@ spec:
         - name: SPRING_PROFILES_ACTIVE
           value: cloud
         - name: DB_INSTANCE_NAME
-          value: pksheldon4-learning:us-east1:sample-db
+          value: pksheldon4-test:us-east1:test
         ports:
         - containerPort: 8080
       - name: cloudsql-proxy
         image: gcr.io/cloudsql-docker/gce-proxy:1.14
         command: ["/cloud_sql_proxy",
-                  "-instances=pksheldon4-learning:us-east1:sample-db=tcp:3306",
+                  "-instances=pksheldon4-test:us-east1:test=tcp:3306",
                   "-credential_file=/secrets/cloudsql/credentials.json"]
         securityContext:
           runAsUser: 2  # non-root user

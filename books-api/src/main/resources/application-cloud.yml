@@ -1,15 +1,14 @@
-#database: mysql
-
 spring:
-  cloud:
-    gcp:
-      sql:
-        database-name: test
-        instance-connection-name: "${DB_INSTANCE_NAME:pksheldon4-learning:us-east1:sample-db}"
+#  cloud:
+#    gcp:
+#      sql:
+#        database-name: test
+#        instance-connection-name: "${DB_INSTANCE_NAME:pksheldon4-test:us-east1:test}"
 
   # Initialize the database since the newly created Cloud SQL database has no tables. The following flag is for Spring Boot 2.
   datasource:
     initialization-mode: always
+    url: jdbc:mysql://mysql:3306/test
     username: psheldon
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
