@@ -14,4 +14,5 @@ public interface BookService {
 
     public List<Book> findBookByNameLike(String nameLikeString);
 
+    public Book createBook(Book book);
 }

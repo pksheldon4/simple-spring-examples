@@ -19,6 +19,8 @@ public class BookController {
 
     @GetMapping("/books")
     public String books() {
-        return restTemplate.getForObject(bookServerUrl + "/books", String.class);
+        String url = bookServerUrl.trim() + "/books";
+        log.info("Calling Books API with url: [" + url + "]");
+        return restTemplate.getForObject(url, String.class);
     }
 }
